@@ -2,19 +2,15 @@ import {
   Avatar,
   Box,
   Button,
-  createTheme,
-  CssBaseline,
   Grid,
   Link,
   Paper,
   Typography,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import React, { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { supabase } from "../../supabaseClient";
-import { APP_HOME } from "../../constants/routes";
 
 interface LoginProps {}
 
@@ -26,7 +22,7 @@ export const Login: React.FC<LoginProps> = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signIn({
+      const { user, error } = await supabase.auth.signIn({
         provider: "twitter",
       });
 

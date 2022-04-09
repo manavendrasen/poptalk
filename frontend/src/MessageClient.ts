@@ -6,8 +6,8 @@ export default class MessageClient {
 
   constructor (username: string) {
     this.pubnub = new PubNub({
-      publishKey: process.env.PUBNUB_PUBLISH_KEY || "",
-      subscribeKey: process.env.PUBNUB_SUSCRIBE_KEY || "",
+      publishKey: process.env.REACT_APP_PUBNUB_PUBLISH_KEY || "",
+      subscribeKey: process.env.REACT_APP_PUBNUB_SUSBCRIBE_KEY || "",
       uuid: username,
     });
   }
@@ -15,5 +15,4 @@ export default class MessageClient {
   joinChannel(channelName: string) {
     this.selectedChannel = channelName;
   }
-
-} 
+}

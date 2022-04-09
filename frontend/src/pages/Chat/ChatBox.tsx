@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 import { PubNubProvider } from "pubnub-react";
 import React, { useState } from "react";
 import MessageClient from "../../MessageClient";
-import { Chat, MessageList, MessageInput } from "@pubnub/react-chat-components";
+import { Chat, MessageList, MessageInput, TypingIndicator } from "@pubnub/react-chat-components";
 
 interface ChatBoxProps {}
 
@@ -15,10 +15,10 @@ export const ChatBox: React.FC<ChatBoxProps> = ({}) => {
     <Container>
       <PubNubProvider client={msgClient.pubnub}>
         <Chat currentChannel={"Default"}>
-        {/* Chat is an obligatory state provider. It allows you to configure some common component
-          options, like the current channel and the general theme for the app. */}
-          <MessageList />
-          <MessageInput />
+          <MessageList enableReactions>
+            <TypingIndicator />
+          </MessageList>
+          <MessageInput typingIndicator />
         </Chat>
       </PubNubProvider>
     </Container>
