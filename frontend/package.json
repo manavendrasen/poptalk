@@ -22,6 +22,7 @@
     "react-leaflet-markercluster": "^3.0.0-rc1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
+    "react-twitter-embed": "^4.0.4",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },
@@ -50,6 +51,7 @@
     ]
   },
   "devDependencies": {
+<<<<<<< HEAD
     "@types/react-router-dom": "^5.3.3",
     "@types/leaflet": "^1.7.9",
     "@types/react-leaflet-markercluster": "^3.0.0",
@@ -57,5 +59,11 @@
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.44",
     "@types/react-dom": "^17.0.15"
+=======
+    "@types/leaflet": "^1.7.9",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-leaflet-markercluster": "^3.0.0",
+    "@types/react-router-dom": "^5.3.3"
+>>>>>>> 662af0b (feat: add post component)
   }
 }

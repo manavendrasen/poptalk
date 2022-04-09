@@ -1,0 +1,29 @@
+{
+  "success": true,
+  "data": {
+    "data": {
+      "text": "Tried my hands at Salsa, last week in Goa. What fun it was!? I absolutely love dancing it's such a beautiful stress buster. 💟\nLocation - Mimi's Morjim, a lovely cafe &amp; bar to chill at if you are in North Goa.\nDo check it out. They do Salsa night on Thursday. #travel https://t.co/hUgnz9stAH",
+      "id": "1510878511976030213",
+      "geo": {
+        "place_id": "5f55bb82cf16ac81"
+      }
+    },
+    "includes": {
+      "places": [
+        {
+          "place_type": "city",
+          "geo": {
+            "type": "Feature",
+            "bbox": [77.3305776, 12.731936, 77.7863188, 13.1142933],
+            "properties": {}
+          },
+          "id": "5f55bb82cf16ac81",
+          "name": "Bengaluru South",
+          "country_code": "IN",
+          "country": "India",
+          "full_name": "Bengaluru South, India"
+        }
+      ]
+    }
+  }
+}
