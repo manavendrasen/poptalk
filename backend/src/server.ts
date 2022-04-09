@@ -1,6 +1,9 @@
 import path from "path";
 import express from "express";
 import dotenv from "dotenv";
+
+dotenv.config({ path: path.join(__dirname, "config", "config.env") });
+
 import morgan from "morgan";
 import cors from "cors";
 import hpp from "hpp";
@@ -16,7 +19,6 @@ import postRouter from "./routes/postRoute";
 
 import { BASE_ROUTE, USER_ROUTE, POST_ROUTE } from "./constants/routes";
 
-dotenv.config({ path: path.join(__dirname, "config", "config.env") });
 const config = setConfig(process.env.NODE_ENV || "DEVELOPMENT");
 
 const HOST = config.HOST || "localhost";

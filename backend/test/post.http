@@ -1,0 +1,7 @@
+### GET ALL PUBLIC POSTS
+
+GET http://localhost:5000/api/v1/post/public HTTP/1.1
+
+
+### GET PUBLIC POST BY ID
+GET http://localhost:5000/api/v1/post/public/3 HTTP/1.1
