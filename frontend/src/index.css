@@ -18,3 +18,19 @@ code {
   width: 100%;
   height: 100vh;
 }
+
+.leaflet-div-icon {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.leaflet-div-icon::after {
+  background-color: #ffffff80;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}

@@ -3,6 +3,14 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
 
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from "recoil";
+
 // routes
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
@@ -17,21 +25,23 @@ import { PartyBucket } from "./pages/Buckets/PartyBucket";
 const App = () => {
   return (
     <>
-      <Router>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <DashboardMenu>
-            <Routes>
-              <Route path={ROUTES.HOME} element={<Home />} />
-              <Route path={ROUTES.LOGIN} element={<Login />} />
-              <Route path={ROUTES.APP_HOME} element={<Dashboard />} />
-              <Route path={ROUTES.TRENDING} element={<Trending />} />
-              <Route path={ROUTES.FAV} element={<Fav />} />
-              <Route path={ROUTES.BUCKET_DETAIL} element={<PartyBucket />} />
-            </Routes>
-          </DashboardMenu>
-        </ThemeProvider>
-      </Router>
+      <RecoilRoot>
+        <Router>
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <DashboardMenu>
+              <Routes>
+                <Route path={ROUTES.HOME} element={<Home />} />
+                <Route path={ROUTES.LOGIN} element={<Login />} />
+                <Route path={ROUTES.APP_HOME} element={<Dashboard />} />
+                <Route path={ROUTES.TRENDING} element={<Trending />} />
+                <Route path={ROUTES.FAV} element={<Fav />} />
+                <Route path={ROUTES.BUCKET_DETAIL} element={<PartyBucket />} />
+              </Routes>
+            </DashboardMenu>
+          </ThemeProvider>
+        </Router>
+      </RecoilRoot>
     </>
   );
 };

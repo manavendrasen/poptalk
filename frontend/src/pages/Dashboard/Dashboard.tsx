@@ -9,7 +9,7 @@ const samplePosts: PostInterface[] = [
   {
     id: "1",
     created_at: new Date(),
-    loc_lan: 12.731936,
+    loc_lat: 12.731936,
     loc_lon: 77.3305776,
     user_id: "fsdfasd",
     post_id: "1512792743914913797",
@@ -21,7 +21,7 @@ const samplePosts: PostInterface[] = [
   {
     id: "2",
     created_at: new Date(),
-    loc_lan: 12.731936,
+    loc_lat: 12.731936,
     loc_lon: 77.3305776,
     user_id: "fsdfasd",
     post_id: "1512792743914913797",
@@ -33,7 +33,7 @@ const samplePosts: PostInterface[] = [
   {
     id: "3",
     created_at: new Date(),
-    loc_lan: 12.731936,
+    loc_lat: 12.731936,
     loc_lon: 77.3305776,
     user_id: "fsdfasd",
     post_id: "1512792743914913797",

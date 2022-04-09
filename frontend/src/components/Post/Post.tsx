@@ -1,12 +1,20 @@
 import React from "react";
 import { Card, Box, Typography, Button, CircularProgress } from "@mui/material";
 import { Post as PostInterface } from "../../constants/modals/Post";
-
+import { useRecoilState } from "recoil";
+import locationState from "../../recoil/atoms/location";
 interface PostProps {
   post: PostInterface;
 }
 
 export const Post: React.FC<PostProps> = ({ post }) => {
+  const [location, setLocation] = useRecoilState(locationState);
+  const handleClick = () => {
+    setLocation({
+      lat: post.loc_lat,
+      lng: post.loc_lon,
+    });
+  };
   return (
     <Card
       sx={{
@@ -28,7 +36,7 @@ export const Post: React.FC<PostProps> = ({ post }) => {
         }}
       >
         <Typography variant='body1'>{post.loc_name}</Typography>
-        <Button>Chat Here</Button>
+        <Button onClick={handleClick}>Chat Here</Button>
       </Box>
 
       <blockquote className='twitter-tweet'>
