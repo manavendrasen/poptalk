@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manavendrasen/poptalk-hackstack.git"
+    "url": "git+https://github.com/manavendrasen/poptalk.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/manavendrasen/poptalk-hackstack/issues"
+    "url": "https://github.com/manavendrasen/poptalk/issues"
   },
-  "homepage": "https://github.com/manavendrasen/poptalk-hackstack#readme",
+  "homepage": "https://github.com/manavendrasen/poptalk#readme",
   "dependencies": {
     "concurrently": "^7.1.0"
   }
