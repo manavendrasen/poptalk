@@ -1,12 +1,14 @@
-import { Container } from "@mui/material";
 import React from "react";
+import { Grid, Box, Container } from "@mui/material";
 
 interface DashboardProps {}
 
-export const Dashboard: React.FC<DashboardProps> = ({}) => {
+export const Dashboard: React.FC<DashboardProps> = () => {
   return (
-    <Container maxWidth='xl'>
-      <h1>Dashboard</h1>
-    </Container>
+    <>
+      <Container>
+        <h4>Dashboard</h4>
+      </Container>
+    </>
   );
 };

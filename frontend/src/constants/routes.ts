@@ -6,6 +6,7 @@ export const BASE_ROUTE = "/api/v1";
 export const LOGIN = `${AUTH_ROUTE}/login`;
 export const APP = `/app`;
 
+export const APP_HOME = `${APP}/home`;
 export const TRENDING = `${APP}/trending`;
 export const FAV = `${APP}/fav`;
 
