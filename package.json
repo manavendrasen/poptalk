@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/manavendrasen/poptalk#readme",
   "dependencies": {
-    "concurrently": "^7.1.0"
+    "concurrently": "^7.1.0",
+    "react-icons": "^4.3.1"
   }
 }
