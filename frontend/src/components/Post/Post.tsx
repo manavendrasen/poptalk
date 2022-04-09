@@ -3,6 +3,7 @@ import { Card, Box, Typography, Button, CircularProgress } from "@mui/material";
 import { Post as PostInterface } from "../../constants/modals/Post";
 import { useRecoilState } from "recoil";
 import locationState from "../../recoil/atoms/location";
+
 interface PostProps {
   post: PostInterface;
 }
@@ -37,6 +38,7 @@ export const Post: React.FC<PostProps> = ({ post }) => {
       >
         <Typography variant='body1'>{post.loc_name}</Typography>
         <Button onClick={handleClick}>Chat Here</Button>
+        <Button>Chat Here</Button>
       </Box>
 
       <blockquote className='twitter-tweet'>

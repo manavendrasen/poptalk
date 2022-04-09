@@ -26,7 +26,7 @@ export const Login: React.FC<LoginProps> = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const { error } = await supabase.auth.signIn({
+      const { user, error } = await supabase.auth.signIn({
         provider: "twitter",
       });
 

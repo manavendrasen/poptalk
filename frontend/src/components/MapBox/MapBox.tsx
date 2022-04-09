@@ -1,58 +1,17 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { Box } from "@mui/material";
-import { useRecoilState } from "recoil";
-import {
-  MapContainer,
-  TileLayer,
-  useMap,
-  useMapEvent,
-  SVGOverlay,
-  Circle,
-} from "react-leaflet";
-import L from "leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import { Marker } from "./Marker";
 import "leaflet/dist/leaflet.css";
-import locationState from "../../recoil/atoms/location";
 
-interface ChangeMapViewProps {
+interface MapBoxProps {
   lat: number;
   lng: number;
 }
 
-interface MapBoxProps {}
-
-interface SetViewOnClickProps {
-  animateRef: any;
-  lat: number;
-  lng: number;
-}
-
-const ChangeMapView: React.FC<ChangeMapViewProps> = ({ lat, lng }) => {
-  const map = useMap();
-  map.setView([lat, lng], map.getZoom());
-  return null;
-};
-
-const SetViewOnClick: React.FC<SetViewOnClickProps> = ({
-  animateRef,
-  lat,
-  lng,
-}) => {
-  const map = useMapEvent("click", (e) => {
-    map.setView([lat, lng], 15, {
-      animate: animateRef.current || false,
-    });
-  });
-
-  return null;
-};
-
-export const MapBox: React.FC<MapBoxProps> = () => {
-  const [location, setLocation] = useRecoilState(locationState);
-  const animateRef = useRef(false);
-
+export const MapBox: React.FC<MapBoxProps> = ({ lat, lng }) => {
   const onClick = () => {
-    // setZoom(map.getZoom() + 50);
+    console.log("test");
   };
   return (
     <Box
@@ -67,35 +26,9 @@ export const MapBox: React.FC<MapBoxProps> = () => {
         right: "0",
       }}
     >
-      {/* <p>
-        <label>
-          <input
-            type='checkbox'
-            onChange={() => {
-              animateRef.current = !animateRef.current;
-            }}
-          />
-          Animate panning
-        </label>
-      </p> */}
-
-      <MapContainer center={[location.lat, location.lng]} zoom={14}>
+      <MapContainer center={[lat, lng]} zoom={13}>
         <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-        <Marker lat={location.lat} lng={location.lng} onClick={onClick} />
-        <ChangeMapView lat={location.lat} lng={location.lng} />
-        <SetViewOnClick
-          animateRef={animateRef}
-          lat={location.lat}
-          lng={location.lng}
-        />
-        <Circle
-          center={[location.lat, location.lng]}
-          radius={1000}
-          fillColor='#FF7761'
-          fillOpacity={0.3}
-          stroke={false}
-          interactive
-        />
+        <Marker lat={lat} lng={lng} onClick={onClick} />
       </MapContainer>
     </Box>
   );

@@ -17,7 +17,6 @@ import { HOME, LOGIN } from "../../constants/routes";
 import styles from "../../assets/jss/components/DrawerLayoutStyles/DashboardLayoutStyles";
 import { Header } from "./Header";
 import { MapBox } from "../MapBox/MapBox";
-import locationState from "../../recoil/atoms/location";
 
 interface IDashboardMenu {
   children: ReactNode | any | null;
@@ -91,7 +90,7 @@ export const DashboardMenu: React.FC<IDashboardMenu> = ({ children }) => {
               <Box>{children}</Box>
             </Grid>
             <Grid item>
-              <MapBox />
+              <MapBox lat={49.8419} lng={24.0315} />
             </Grid>
           </Grid>
         </Box>

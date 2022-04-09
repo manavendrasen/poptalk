@@ -21,27 +21,27 @@ import { DashboardMenu } from "./components/Dashboard/DashboardMenu";
 import { Trending } from "./pages/Trending/Trending";
 import { Fav } from "./pages/Fav/Fav";
 import { PartyBucket } from "./pages/Buckets/PartyBucket";
+import { ChatBox } from "./pages/Chat/ChatBox";
 
 const App = () => {
   return (
     <>
-      <RecoilRoot>
-        <Router>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <DashboardMenu>
-              <Routes>
-                <Route path={ROUTES.HOME} element={<Home />} />
-                <Route path={ROUTES.LOGIN} element={<Login />} />
-                <Route path={ROUTES.APP_HOME} element={<Dashboard />} />
-                <Route path={ROUTES.TRENDING} element={<Trending />} />
-                <Route path={ROUTES.FAV} element={<Fav />} />
-                <Route path={ROUTES.BUCKET_DETAIL} element={<PartyBucket />} />
-              </Routes>
-            </DashboardMenu>
-          </ThemeProvider>
-        </Router>
-      </RecoilRoot>
+      <Router>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <DashboardMenu>
+            <Routes>
+              <Route path={ROUTES.HOME} element={<Home />} />
+              <Route path={ROUTES.LOGIN} element={<Login />} />
+              <Route path={ROUTES.APP_HOME} element={<Dashboard />} />
+              <Route path={ROUTES.TRENDING} element={<Trending />} />
+              <Route path={ROUTES.FAV} element={<Fav />} />
+              <Route path={ROUTES.BUCKET_DETAIL} element={<PartyBucket />} />
+              <Route path={ROUTES.CHAT} element={<ChatBox />} />
+            </Routes>
+          </DashboardMenu>
+        </ThemeProvider>
+      </Router>
     </>
   );
 };
