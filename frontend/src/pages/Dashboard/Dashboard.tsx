@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Container } from "@mui/material";
+import { Grid, Box, Container, Typography } from "@mui/material";
 import { Post } from "../../components/Post/Post";
 import { Post as PostInterface } from "../../constants/modals/Post";
 
@@ -51,7 +51,7 @@ export const Dashboard: React.FC<DashboardProps> = () => {
   return (
     <>
       <Container>
-        <h4>Dashboard</h4>
+        <h3>Your Recants</h3>
         <Grid container spacing={3}>
           {samplePosts.map((post) => (
             <Grid item xs={12} key={post.id}>
