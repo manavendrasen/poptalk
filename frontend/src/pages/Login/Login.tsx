@@ -1,15 +1,35 @@
 import { ThemeProvider } from "@emotion/react";
 import { Avatar, Box, Button, createTheme, CssBaseline, Grid, Link, Paper, Typography } from "@mui/material";
 import TwitterIcon from '@mui/icons-material/Twitter';
-import React from "react";
+import React, { useState } from "react";
 import { Twittertheme } from "../../Theme/Twitter.theme";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { supabase } from "../../supabaseClient";
 
 interface LoginProps {}
 
 const theme = createTheme();
 
 export const Login: React.FC<LoginProps> = ({}) => {
+
+  const [loading,setLoading] = useState(false);
+
+  const handleTwitterLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try{
+      setLoading(true);
+      const { error } = await supabase.auth.signIn({
+        provider: 'twitter',
+      });
+      if(error) throw error;
+    }catch(error:any){
+      console.log(error.message);
+    }finally{
+      setLoading(false);
+    }
+  }
+
+
   return (
       <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -44,7 +64,7 @@ export const Login: React.FC<LoginProps> = ({}) => {
             <Typography component="h1" variant="h5">
               SignIn
             </Typography>
-            <Box component="form" noValidate sx={{ mt: 1 }}>
+            <Box component="form" noValidate onSubmit={handleTwitterLogin} sx={{ mt: 1 }}>
               <ThemeProvider theme={Twittertheme}>
                 <Button
                   type="submit"
@@ -53,7 +73,7 @@ export const Login: React.FC<LoginProps> = ({}) => {
                   variant="contained"
                   sx={{ mt: 4, mb: 2 }}
                 >
-                  LogIn thorugh Twitter<TwitterIcon sx={{m:.5}}/>
+                  {loading ? 'Loading...' : <>LogIn thorugh Twitter<TwitterIcon sx={{m:.5}}/></>}
                 </Button>
               </ThemeProvider>
               <Grid container>
