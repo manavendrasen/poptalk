@@ -1,0 +1,37 @@
+### CREATE USER
+
+POST http://localhost:5000/api/v1/user/e5b609e9-2f1e-4088-a404-3dceef5d7325 HTTP/1.1
+
+
+### GET BUCKETS
+
+GET http://localhost:5000/api/v1/user/e5b609e9-2f1e-4088-a404-3dceef5d7325/bucket HTTP/1.1
+
+### GET BUCKET BY ID
+
+GET http://localhost:5000/api/v1/user/e5b609e9-2f1e-4088-a404-3dceef5d7325/bucket/1 HTTP/1.1
+
+### CREATE POSTS IN BUCKET
+
+POST http://localhost:5000/api/v1/user/e5b609e9-2f1e-4088-a404-3dceef5d7325/bucket/2/post HTTP/1.1
+content-type: application/json
+
+{
+  "post_id": "9823-2313",
+  "post_url": "http://example.com/",
+  "chat_id": "in-jaipur-1",
+  "loc_lat": "232",
+  "loc_lon": "32",
+  "loc_name": "Jaipur",
+  "public": false
+}
+
+### GET POSTS IN BUCKET
+GET http://localhost:5000/api/v1/user/e5b609e9-2f1e-4088-a404-3dceef5d7325/bucket/1/post HTTP/1.1
+
+
+### GET POST BY ID
+GET http://localhost:5000/api/v1/user/e5b609e9-2f1e-4088-a404-3dceef5d7325/bucket/1/post/3 HTTP/1.1
+
+### MAKE POST BY ID
+PUT http://localhost:5000/api/v1/user/e5b609e9-2f1e-4088-a404-3dceef5d7325/bucket/1/post/3/makePublic HTTP/1.1
