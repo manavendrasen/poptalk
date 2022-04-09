@@ -5,6 +5,7 @@ import {
   Divider,
   useTheme,
   useMediaQuery,
+  Grid,
 } from "@mui/material";
 import { IoMenu } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
@@ -14,6 +15,7 @@ import { DrawerHeader } from "./StyledDrawerHeader";
 import { HOME, LOGIN } from "../../constants/routes";
 import styles from "../../assets/jss/components/DrawerLayoutStyles/DashboardLayoutStyles";
 import { Header } from "./Header";
+import { MapBox } from "../MapBox/MapBox";
 
 interface IDashboardMenu {
   children: ReactNode | any | null;
@@ -76,7 +78,20 @@ export const DashboardMenu: React.FC<IDashboardMenu> = ({ children }) => {
           <Navigator />
         </Drawer>
         <Box component='main' sx={styles.container}>
-          {children}
+          <Grid
+            container
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "4fr 6fr",
+            }}
+          >
+            <Grid item>
+              <Box>{children}</Box>
+            </Grid>
+            <Grid item>
+              <MapBox lat={49.8419} lng={24.0315} />
+            </Grid>
+          </Grid>
         </Box>
       </Box>
     );
