@@ -23,7 +23,6 @@
     "react-leaflet-markercluster": "^3.0.0-rc1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
-    "react-twitter-embed": "^4.0.4",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },

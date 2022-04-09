@@ -1,7 +1,6 @@
 import React from "react";
 import { Card, Box, Typography, Button, CircularProgress } from "@mui/material";
 import { Post as PostInterface } from "../../constants/modals/Post";
-import { TwitterTweetEmbed } from "react-twitter-embed";
 
 interface PostProps {
   post: PostInterface;
@@ -37,10 +36,6 @@ export const Post: React.FC<PostProps> = ({ post }) => {
           <CircularProgress />
         </a>
       </blockquote>
-      {/* <TwitterTweetEmbed
-        tweetId={"1512792743914913797"}
-        options={{ width: 100 }} 
-      /> */}
     </Card>
   );
 };
