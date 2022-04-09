@@ -12,7 +12,7 @@ import { Dashboard } from "./pages/Dashboard/Dashboard";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -23,7 +23,7 @@ const App = () => {
           </Routes>
         </ThemeProvider>
       </Router>
-    </div>
+    </>
   );
 };
 
