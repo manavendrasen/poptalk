@@ -52,7 +52,7 @@ export const Dashboard: React.FC<DashboardProps> = () => {
         <Grid container spacing={3}>
           {samplePosts.map((post) => (
             <Grid item xs={12} key={post.id}>
-              <Post post={post} />
+              <Post bucketPost={post} />
             </Grid>
           ))}
         </Grid>

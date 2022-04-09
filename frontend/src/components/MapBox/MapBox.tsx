@@ -13,6 +13,8 @@ import L from "leaflet";
 import locationState from "../../recoil/atoms/location";
 import { Marker } from "./Marker";
 import "leaflet/dist/leaflet.css";
+import postState from "../../recoil/atoms/post";
+import { Navigate, useNavigate } from "react-router-dom";
 
 interface ChangeMapViewProps {
   lat: number;
@@ -50,10 +52,12 @@ const SetViewOnClick: React.FC<SetViewOnClickProps> = ({
 };
 
 export const MapBox: React.FC<MapBoxProps> = () => {
+  const navigate = useNavigate();
   const [location, setLocation] = useRecoilState(locationState);
+  const [post, setPost] = useRecoilState(postState);
   const animateRef = useRef(false);
   const onClick = () => {
-    console.log("hello");
+    navigate(`/app/chat/${post.id}`);
   };
   return (
     <Box

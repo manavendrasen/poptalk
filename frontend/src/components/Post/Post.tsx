@@ -12,13 +12,15 @@ import { BsThreeDots } from "react-icons/bs";
 import { Post as PostInterface } from "../../constants/modals/Post";
 import { useRecoilState } from "recoil";
 import locationState from "../../recoil/atoms/location";
+import postState from "../../recoil/atoms/post";
 
 interface PostProps {
-  post: PostInterface;
+  bucketPost: PostInterface;
 }
 
-export const Post: React.FC<PostProps> = ({ post }) => {
+export const Post: React.FC<PostProps> = ({ bucketPost }) => {
   const [location, setLocation] = useRecoilState(locationState);
+  const [post, setPost] = useRecoilState(postState);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const openOptions = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -29,8 +31,11 @@ export const Post: React.FC<PostProps> = ({ post }) => {
   };
   const handleClick = () => {
     setLocation({
-      lat: post.loc_lat,
-      lng: post.loc_lon,
+      lat: bucketPost.loc_lat,
+      lng: bucketPost.loc_lon,
+    });
+    setPost({
+      id: bucketPost.id,
     });
   };
   return (
@@ -70,7 +75,7 @@ export const Post: React.FC<PostProps> = ({ post }) => {
           >
             🎉
           </Box>
-          <Typography variant='body1'>{post.loc_name}</Typography>
+          <Typography variant='body1'>{bucketPost.loc_name}</Typography>
         </Box>
         <Box
           sx={{
@@ -94,7 +99,7 @@ export const Post: React.FC<PostProps> = ({ post }) => {
       </Box>
 
       <blockquote className='twitter-tweet'>
-        <a href={post.post_url}>
+        <a href={bucketPost.post_url}>
           <CircularProgress />
         </a>
       </blockquote>

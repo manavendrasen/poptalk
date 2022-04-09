@@ -19,7 +19,7 @@ import { APP_HOME } from "../../constants/routes";
 interface LoginProps {}
 
 export const Login: React.FC<LoginProps> = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const handleTwitterLogin = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -35,7 +35,7 @@ export const Login: React.FC<LoginProps> = () => {
       console.log(error.message);
     } finally {
       setLoading(false);
-      // navigate(APP_HOME);
+      navigate(APP_HOME);
     }
   };
 
