@@ -11,3 +11,5 @@ export const FAV = `${APP}/fav`;
 
 export const BUCKET = `${APP}/bucket`;
 export const BUCKET_DETAIL = `${BUCKET}/:id`;
+
+export const CHAT = `${APP}/chat`;

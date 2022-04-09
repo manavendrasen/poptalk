@@ -13,6 +13,7 @@ import { DashboardMenu } from "./components/Dashboard/DashboardMenu";
 import { Trending } from "./pages/Trending/Trending";
 import { Fav } from "./pages/Fav/Fav";
 import { PartyBucket } from "./pages/Buckets/PartyBucket";
+import { ChatBox } from "./pages/Chat/ChatBox";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
               <Route path={ROUTES.TRENDING} element={<Trending />} />
               <Route path={ROUTES.FAV} element={<Fav />} />
               <Route path={ROUTES.BUCKET_DETAIL} element={<PartyBucket />} />
+              <Route path={ROUTES.CHAT} element={<ChatBox />} />
             </Routes>
           </DashboardMenu>
         </ThemeProvider>
