@@ -16,7 +16,7 @@ import { PartyBucket } from "./pages/Buckets/PartyBucket";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -32,7 +32,7 @@ const App = () => {
           </DashboardMenu>
         </ThemeProvider>
       </Router>
-    </div>
+    </>
   );
 };
 
