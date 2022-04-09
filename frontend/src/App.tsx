@@ -9,6 +9,10 @@ import * as ROUTES from "./constants/routes";
 import { Login } from "./pages/Login/Login";
 import { Home } from "./pages/Home/Home";
 import { Dashboard } from "./pages/Dashboard/Dashboard";
+import { DashboardMenu } from "./components/Dashboard/DashboardMenu";
+import { Trending } from "./pages/Trending/Trending";
+import { Fav } from "./pages/Fav/Fav";
+import { PartyBucket } from "./pages/Buckets/PartyBucket";
 
 const App = () => {
   return (
@@ -16,11 +20,16 @@ const App = () => {
       <Router>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Routes>
-            <Route path={ROUTES.HOME} element={<Home />} />
-            <Route path={ROUTES.LOGIN} element={<Login />} />
-            <Route path={ROUTES.APP} element={<Dashboard />} />
-          </Routes>
+          <DashboardMenu>
+            <Routes>
+              <Route path={ROUTES.HOME} element={<Home />} />
+              <Route path={ROUTES.LOGIN} element={<Login />} />
+              <Route path={ROUTES.APP} element={<Dashboard />} />
+              <Route path={ROUTES.TRENDING} element={<Trending />} />
+              <Route path={ROUTES.FAV} element={<Fav />} />
+              <Route path={ROUTES.BUCKET_DETAIL} element={<PartyBucket />} />
+            </Routes>
+          </DashboardMenu>
         </ThemeProvider>
       </Router>
     </div>
