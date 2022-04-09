@@ -20,6 +20,10 @@ export const MapBox: React.FC<MapBoxProps> = ({ lat, lng }) => {
         overflow: "hidden",
         background: "background.paper",
         height: "92vh",
+        position: "sticky",
+        top: "64px",
+        zIndex: "1",
+        right: "0",
       }}
     >
       <MapContainer center={[lat, lng]} zoom={13}>

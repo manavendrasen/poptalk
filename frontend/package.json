@@ -23,6 +23,7 @@
     "react-leaflet-markercluster": "^3.0.0-rc1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
+    "react-twitter-embed": "^4.0.4",
     "typescript": "^4.6.3",
     "web-vitals": "^2.1.4"
   },
@@ -51,9 +52,9 @@
     ]
   },
   "devDependencies": {
-    "@types/react-dom": "^18.0.0",
-    "@types/react-router-dom": "^5.3.3",
     "@types/leaflet": "^1.7.9",
-    "@types/react-leaflet-markercluster": "^3.0.0"
+    "@types/react-dom": "^18.0.0",
+    "@types/react-leaflet-markercluster": "^3.0.0",
+    "@types/react-router-dom": "^5.3.3"
   }
 }
