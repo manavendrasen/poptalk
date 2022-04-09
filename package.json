@@ -1,0 +1,24 @@
+{
+  "name": "poptalk-hackstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "dev": "concurrently --kill-others \"npm:dev:frontend\" \"npm:dev:backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manavendrasen/poptalk-hackstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manavendrasen/poptalk-hackstack/issues"
+  },
+  "homepage": "https://github.com/manavendrasen/poptalk-hackstack#readme",
+  "dependencies": {
+    "concurrently": "^7.1.0"
+  }
+}
