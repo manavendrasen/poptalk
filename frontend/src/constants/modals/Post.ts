@@ -2,7 +2,6 @@ export interface Post {
   id: string;
   created_at: Date;
   loc_lat: number;
-  loc_lan: number;
   loc_lon: number;
   user_id: string;
   post_id: string;

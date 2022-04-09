@@ -90,7 +90,7 @@ export const DashboardMenu: React.FC<IDashboardMenu> = ({ children }) => {
               <Box>{children}</Box>
             </Grid>
             <Grid item>
-              <MapBox lat={49.8419} lng={24.0315} />
+              <MapBox />
             </Grid>
           </Grid>
         </Box>
