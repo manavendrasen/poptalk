@@ -38,7 +38,16 @@ export const ChatBox: React.FC<ChatBoxProps> = () => {
     <Container>
       <PubNubProvider client={msgClient.pubnub}>
         {activePost === null ? (
-          <CircularProgress />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "2rem",
+            }}
+          >
+            <CircularProgress />
+          </Box>
         ) : (
           <>
             <Typography variant='h6'>Chat</Typography>
@@ -67,7 +76,7 @@ export const ChatBox: React.FC<ChatBoxProps> = () => {
               }}
             >
               <Chat theme='light' currentChannel={activePost.chat_id}>
-                <MessageList enableReactions>
+                <MessageList enableReactions fetchMessages={10}>
                   <TypingIndicator />
                 </MessageList>
                 <MessageInput typingIndicator />

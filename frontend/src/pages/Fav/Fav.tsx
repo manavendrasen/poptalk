@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import React from "react";
 
 interface FavProps {}
@@ -6,7 +6,7 @@ interface FavProps {}
 export const Fav: React.FC<FavProps> = () => {
   return (
     <Container maxWidth='xl'>
-      <h1>Fav</h1>
+      <Typography variant='h6'>Trending</Typography>
     </Container>
   );
 };

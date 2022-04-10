@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import React from "react";
 
 interface TrendingProps {}
@@ -6,7 +6,7 @@ interface TrendingProps {}
 export const Trending: React.FC<TrendingProps> = () => {
   return (
     <Container maxWidth='xl'>
-      <h1>Trending</h1>
+      <Typography variant='h6'>Trending</Typography>
     </Container>
   );
 };
