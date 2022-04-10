@@ -7,7 +7,6 @@ interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = ({}) => {
   const [top, setTop] = useState(true);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -21,16 +20,16 @@ export const Home: React.FC<HomeProps> = ({}) => {
   const handleTwitterLogin = async () => {
   
     try {
-      setLoading(true);
       const { error } = await supabase.auth.signIn({
         provider: "twitter",
+      },{
+        redirectTo:"http://localhost:3000/app/home"
       });
 
       if (error) throw error;
     } catch (error: any) {
       console.log(error.message);
     } finally {
-      setLoading(false);
       // navigate(APP_HOME);
     }
   };
