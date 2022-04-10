@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { supabase } from "../../supabaseClient";
 
 interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = ({}) => {
   const [top, setTop] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -14,6 +16,24 @@ export const Home: React.FC<HomeProps> = ({}) => {
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
+
+
+  const handleTwitterLogin = async () => {
+  
+    try {
+      setLoading(true);
+      const { error } = await supabase.auth.signIn({
+        provider: "twitter",
+      });
+
+      if (error) throw error;
+    } catch (error: any) {
+      console.log(error.message);
+    } finally {
+      setLoading(false);
+      // navigate(APP_HOME);
+    }
+  };
 
   return (
     <div className='flex flex-col min-h-screen overflow-hidden'>
@@ -144,7 +164,7 @@ export const Home: React.FC<HomeProps> = ({}) => {
                     data-aos='zoom-y-out'
                     data-aos-delay='300'
                   >
-                    <button className='flex justify-center items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 px-8'>
+                    <button onClick={() => {handleTwitterLogin()}} className='flex justify-center items-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 px-8'>
                       <p>Login with Twitter</p>
 
                       <TwitterIcon
