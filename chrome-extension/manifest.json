@@ -1,0 +1,19 @@
+{
+    "name": "PopTalk Bot",
+    "description": "Buildind an extension to get the Twitter post data",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "activeTab"
+    ],
+    "action": {
+        "default_popup": "index.html"
+      }
+   
+    
+  }
