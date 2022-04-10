@@ -48,7 +48,7 @@ export const Home: React.FC<HomeProps> = ({}) => {
             <div className='flex-shrink-0 mr-4'>
               {/* Logo */}
               <Link to='/' className='block' aria-label='Cruip'>
-                <svg
+                {/* <svg
                   className='w-8 h-8'
                   viewBox='0 0 32 32'
                   xmlns='http://www.w3.org/2000/svg'
@@ -74,7 +74,11 @@ export const Home: React.FC<HomeProps> = ({}) => {
                     fill='url(#header-logo)'
                     fillRule='nonzero'
                   />
-                </svg>
+                </svg> */}
+                <div className="flex items-center">
+                <img src="https://user-images.githubusercontent.com/44477212/162623423-5472eef0-2741-4f70-9465-d9e206c314c2.png" alt="" width="50px"/>
+                <p className="ml-3 text-base font-bold">PopTalk!</p>
+              </div>
               </Link>
             </div>
 

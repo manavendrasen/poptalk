@@ -21,7 +21,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/manavendrasen/poptalk">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/44477212/162623423-5472eef0-2741-4f70-9465-d9e206c314c2.png" alt="Logo" width="100" height="100">
   </a>
 
   <h2 align="center">POPTALK!</h2>
