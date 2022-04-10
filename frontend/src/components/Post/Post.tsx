@@ -5,10 +5,7 @@ import {
   Typography,
   Button,
   CircularProgress,
-  Menu,
-  MenuItem,
 } from "@mui/material";
-import { BsThreeDots } from "react-icons/bs";
 import { Post as PostInterface } from "../../constants/modals/Post";
 import { useRecoilState } from "recoil";
 import locationState from "../../recoil/atoms/location";

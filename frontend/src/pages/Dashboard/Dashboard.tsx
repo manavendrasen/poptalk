@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import React,{useEffect,useState} from "react";
 import { Grid, Box, Container, Typography } from "@mui/material";
+=======
+import React from "react";
+import { Grid, Container } from "@mui/material";
+>>>>>>> 31c87fc1e719c9d56fc542a7f2bc53c4cd4d59ef
 import { Post } from "../../components/Post/Post";
 import { Post as PostInterface } from "../../constants/modals/Post";
 import { getAllPosts } from "../../api/getPosts";

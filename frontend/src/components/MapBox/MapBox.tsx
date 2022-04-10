@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
 import { Box } from "@mui/material";
 import { useRecoilState } from "recoil";
 import {
@@ -6,15 +6,13 @@ import {
   TileLayer,
   useMap,
   useMapEvent,
-  SVGOverlay,
   Circle,
 } from "react-leaflet";
-import L from "leaflet";
 import locationState from "../../recoil/atoms/location";
 import { Marker } from "./Marker";
 import "leaflet/dist/leaflet.css";
 import postState from "../../recoil/atoms/post";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface ChangeMapViewProps {
   lat: number;
@@ -53,8 +51,8 @@ const SetViewOnClick: React.FC<SetViewOnClickProps> = ({
 
 export const MapBox: React.FC<MapBoxProps> = () => {
   const navigate = useNavigate();
-  const [location, setLocation] = useRecoilState(locationState);
-  const [post, setPost] = useRecoilState(postState);
+  const [location] = useRecoilState(locationState);
+  const [post] = useRecoilState(postState);
   const animateRef = useRef(false);
   const onClick = () => {
     navigate(`/app/chat/${post.id}`);
