@@ -5,10 +5,6 @@ import theme from "./theme";
 
 import {
   RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
 } from "recoil";
 
 // routes
