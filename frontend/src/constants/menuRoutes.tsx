@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { HiFire, HiStar, HiHome } from "react-icons/hi";
 import { BiPlus } from "react-icons/bi";
-import { APP_HOME, BUCKET, FAV, TRENDING } from "./routes";
+import { APP_HOME, BUCKET, CHAT, CHAT_ROUTE, FAV, TRENDING } from "./routes";
 
 export const menuRoutes = [
   {
@@ -32,12 +32,12 @@ export const menuRoutes = [
     children: [
       {
         id: "Party On!",
-        route: BUCKET + "/hello",
+        route: CHAT_ROUTE + "/15",
         icon: <Box>🥳</Box>,
       },
       {
         id: "Friends",
-        route: BUCKET + "/autumn",
+        route: CHAT_ROUTE + "/17",
         icon: <Box>⚽</Box>,
       },
       {
