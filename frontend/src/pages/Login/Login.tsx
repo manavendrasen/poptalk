@@ -2,31 +2,28 @@ import {
   Avatar,
   Box,
   Button,
-  createTheme,
-  CssBaseline,
   Grid,
   Link,
   Paper,
   Typography,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import React, { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { supabase } from "../../supabaseClient";
-import { APP_HOME } from "../../constants/routes";
+import { useRecoilState } from "recoil";
+import authState from "../../recoil/atoms/auth";
 
 interface LoginProps {}
 
 export const Login: React.FC<LoginProps> = () => {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const handleTwitterLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const { user, error } = await supabase.auth.signIn({
+      const { error } = await supabase.auth.signIn({
         provider: "twitter",
       });
 
@@ -35,7 +32,7 @@ export const Login: React.FC<LoginProps> = () => {
       console.log(error.message);
     } finally {
       setLoading(false);
-      navigate(APP_HOME);
+      // navigate(APP_HOME);
     }
   };
 

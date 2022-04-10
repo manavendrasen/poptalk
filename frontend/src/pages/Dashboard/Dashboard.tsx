@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Container, Typography } from "@mui/material";
+import { Grid, Container } from "@mui/material";
 import { Post } from "../../components/Post/Post";
 import { Post as PostInterface } from "../../constants/modals/Post";
 
