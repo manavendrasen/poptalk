@@ -12,11 +12,11 @@
 
   <p align="center">
     Build Bucket Lists from social media of the places you want to visit and discover new places. Start a conversation, interact and go explore.
-    <br />    ·
+    <br />
     <a href="https://github.com/manavendrasen/poptalk/issues">Report Bug</a>
     ·
     <a href="https://github.com/manavendrasen/poptalk/issues">Request Feature</a>
-    .
+    ·
     <a href="https://www.canva.com/design/DAE9efgRm10/j0KedxJ8faVXq4KVk2wT-Q/view">Presentation</a>
   </p>
 </div>
@@ -62,10 +62,6 @@ What does PopTalk do?
    - Allowing users to signup and log in using social media accounts in chrome extension and web app.
    - Creating temporary chat channels and allowing users to authenticate and chat using their Twitter profile.
    - Packing our solution into a seamless User Interface and Experience. Deployment on different platforms.
-
-  <br/>
-  <br/>
-
 
 ### Technologies Used
 
