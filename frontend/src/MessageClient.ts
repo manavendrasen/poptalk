@@ -11,8 +11,4 @@ export default class MessageClient {
       uuid: username,
     });
   }
-
-  joinChannel(channelName: string) {
-    this.selectedChannel = channelName;
-  }
 }
