@@ -16,12 +16,6 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
@@ -30,7 +24,9 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">POPTALK!</h3>
+  <h2 align="center">POPTALK!</h2>
+  <br/>
+  <p align="center">Talk before you walk!</p>
 
   <p align="center">
     Build Bucket Lists from social media of the places you want to visit, discover new places. Start a conversation, interact and go explore
@@ -51,30 +47,19 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
+      <a href="#problem">Problem</a>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a  href="#challenges-we-ran-into">Challenges we ran into </a></li>
+    <li><a href="#technologies-used">Technologies Used</a></li>
+    <li><a href="#architecture">Architecture</a><li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project
+### Problem 
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
@@ -84,11 +69,32 @@ Why?
 - People want to interact and clarify their doubts regarding the place.
 - People want to store and track their travel bucketlist.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+What does PopTalk do?
 
-### Built With
+ - Allows people to add #wanderlust posts from social media to their buckelist.
+ - Allows people to join location based chatrooms and interact with people around the location.
+  
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+<br/>
+
+
+<!-- CHALLENGES -->
+
+### Challenges we ran into 
+
+   - Integrating twitter developer's API into our application.
+   - Making the demo video.
+   - Integrating real time markers on maps based on the post's location.
+   - Real time location based chatting.
+   - Desinging the overall architecture and user interface of the application.
+  
+
+  <br/>
+  <br/>
+
+
+### Technologies Used
+
 
 #### Frontend
 
@@ -103,134 +109,33 @@ This section should list any major frameworks/libraries used to bootstrap your p
 - [Node.js](https://nodejs.org/en/)
 - [Express.js](https://expressjs.com/)
 - [Supabase](https://supabase.com/)
+  
+#### Language
+- [Typescript](https://www.typescriptlang.org/)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  <br/>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+  <br/>
 
-<!-- GETTING STARTED -->
-
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get the keys mentioned in the `frontend/.env.example` and `backend/config/config.example.env` files.
-2. Clone the repo
-   ```sh
-   git clone https://github.com/manavendrasen/poptalk
-   cd poptalk
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `frontend/.env` and `backend/config/config.env`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] Spanish
-
-See the [open issues](https://github.com/manavendrasen/poptalk/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
+### Architecture
+![Architecture](https://user-images.githubusercontent.com/32746859/162618911-91f65ded-0262-42d2-82a1-7c53a0bafa2a.png)
 <!-- LICENSE -->
 
-## License
+
+
+### License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 <!-- CONTACT -->
 
-## Contact
+### Contact
 
 - [Manavendra Sen](https://www.linkedin.com/in/manavendrasen/)
-- [Somil Gupta]()
-- [Divyanshu Sharma]()
-- [Ayush Agarawal]()
+- [Somil Gupta](https://www.linkedin.com/in/somil-gupta-142973195/)
+- [Divyanshu Sharma](https://www.linkedin.com/in/d1vshar/)
+- [Ayush Agarawal](https://www.linkedin.com/in/ayush-agrawal-86143a190)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-- [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-- [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-- [Malven's Grid Cheatsheet](https://grid.malven.co/)
-- [Img Shields](https://shields.io)
-- [GitHub Pages](https://pages.github.com)
-- [Font Awesome](https://fontawesome.com)
-- [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/manavendrasen/poptalk/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/manavendrasen/poptalk/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/manavendrasen/poptalk/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/manavendrasen/poptalk/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/manavendrasen/poptalk/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
