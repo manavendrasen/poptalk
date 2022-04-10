@@ -31,14 +31,14 @@ export const menuRoutes = [
 
     children: [
       {
-        id: "Party",
+        id: "Party On!",
         route: BUCKET + "/hello",
-        icon: <Box>✌</Box>,
+        icon: <Box>🥳</Box>,
       },
       {
         id: "Friends",
         route: BUCKET + "/autumn",
-        icon: <Box>🎉</Box>,
+        icon: <Box>⚽</Box>,
       },
       {
         id: "Add Bucket",
