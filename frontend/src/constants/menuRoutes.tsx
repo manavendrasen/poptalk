@@ -1,6 +1,7 @@
-import { Box } from "@mui/material";
 import React from "react";
+import { Box } from "@mui/material";
 import { HiFire, HiStar, HiHome } from "react-icons/hi";
+import { BiPlus } from "react-icons/bi";
 import { APP_HOME, BUCKET, FAV, TRENDING } from "./routes";
 
 export const menuRoutes = [
@@ -32,7 +33,17 @@ export const menuRoutes = [
       {
         id: "Party",
         route: BUCKET + "/hello",
-        icon: <Box>🎁</Box>,
+        icon: <Box>✌</Box>,
+      },
+      {
+        id: "Friends",
+        route: BUCKET + "/autumn",
+        icon: <Box>🎉</Box>,
+      },
+      {
+        id: "Add Bucket",
+        route: BUCKET + "/new",
+        icon: <BiPlus size={24} />,
       },
     ],
   },

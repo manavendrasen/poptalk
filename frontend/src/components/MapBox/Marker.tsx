@@ -16,6 +16,7 @@ export const Marker: React.FC<MarkerProps> = ({ lat, lng, onClick }) => {
       riseOnHover
       icon={
         new Leaflet.Icon({
+          className: "leaflet-div-icon",
           iconUrl: "https://i.pravatar.cc/300",
           iconSize: [size, size], // size of the icon
           iconAnchor: [size / 2, size / 2], // point of the icon which will correspond to marker's location

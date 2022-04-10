@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Container } from "@mui/material";
+import { Grid, Box, Container, Typography } from "@mui/material";
 import { Post } from "../../components/Post/Post";
 import { Post as PostInterface } from "../../constants/modals/Post";
 
@@ -9,7 +9,7 @@ const samplePosts: PostInterface[] = [
   {
     id: "1",
     created_at: new Date(),
-    loc_lan: 12.731936,
+    loc_lat: 12.731936,
     loc_lon: 77.3305776,
     user_id: "fsdfasd",
     post_id: "1512792743914913797",
@@ -21,7 +21,7 @@ const samplePosts: PostInterface[] = [
   {
     id: "2",
     created_at: new Date(),
-    loc_lan: 12.731936,
+    loc_lat: 12.731936,
     loc_lon: 77.3305776,
     user_id: "fsdfasd",
     post_id: "1512792743914913797",
@@ -33,7 +33,7 @@ const samplePosts: PostInterface[] = [
   {
     id: "3",
     created_at: new Date(),
-    loc_lan: 12.731936,
+    loc_lat: 12.731936,
     loc_lon: 77.3305776,
     user_id: "fsdfasd",
     post_id: "1512792743914913797",
@@ -48,11 +48,11 @@ export const Dashboard: React.FC<DashboardProps> = () => {
   return (
     <>
       <Container>
-        <h4>Dashboard</h4>
+        <h3>Your Recants</h3>
         <Grid container spacing={3}>
           {samplePosts.map((post) => (
             <Grid item xs={12} key={post.id}>
-              <Post post={post} />
+              <Post bucketPost={post} />
             </Grid>
           ))}
         </Grid>

@@ -1,12 +1,43 @@
 import React from "react";
-import { Card, Box, Typography, Button, CircularProgress } from "@mui/material";
+import {
+  Card,
+  Box,
+  Typography,
+  Button,
+  CircularProgress,
+  Menu,
+  MenuItem,
+} from "@mui/material";
+import { BsThreeDots } from "react-icons/bs";
 import { Post as PostInterface } from "../../constants/modals/Post";
+import { useRecoilState } from "recoil";
+import locationState from "../../recoil/atoms/location";
+import postState from "../../recoil/atoms/post";
 
 interface PostProps {
-  post: PostInterface;
+  bucketPost: PostInterface;
 }
 
-export const Post: React.FC<PostProps> = ({ post }) => {
+export const Post: React.FC<PostProps> = ({ bucketPost }) => {
+  const [location, setLocation] = useRecoilState(locationState);
+  const [post, setPost] = useRecoilState(postState);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const openOptions = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleClick = () => {
+    setLocation({
+      lat: bucketPost.loc_lat,
+      lng: bucketPost.loc_lon,
+    });
+    setPost({
+      id: bucketPost.id,
+    });
+  };
   return (
     <Card
       sx={{
@@ -27,15 +58,63 @@ export const Post: React.FC<PostProps> = ({ post }) => {
           marginTop: "1rem",
         }}
       >
-        <Typography variant='body1'>{post.loc_name}</Typography>
-        <Button>Chat Here</Button>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "2rem",
+            }}
+          >
+            🎉
+          </Box>
+          <Typography variant='body1'>{bucketPost.loc_name}</Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            justifyContent: "flex-end",
+          }}
+        >
+          {/* <Button
+            id='basic-button'
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup='true'
+            aria-expanded={open ? "true" : undefined}
+            onClick={openOptions}
+          >
+            <BsThreeDots />
+          </Button> */}
+          <Button onClick={handleClick}>Chat Here</Button>
+        </Box>
       </Box>
 
       <blockquote className='twitter-tweet'>
-        <a href={post.post_url}>
+        <a href={bucketPost.post_url}>
           <CircularProgress />
         </a>
       </blockquote>
+      {/* 
+      <Menu
+        id='basic-menu'
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          "aria-labelledby": "basic-button",
+        }}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+      </Menu> */}
     </Card>
   );
 };

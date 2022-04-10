@@ -7,6 +7,7 @@ import {
   useMediaQuery,
   Grid,
 } from "@mui/material";
+import { useRecoilState } from "recoil";
 import { IoMenu } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
 import { Navigator } from "./Navigator";
@@ -89,7 +90,7 @@ export const DashboardMenu: React.FC<IDashboardMenu> = ({ children }) => {
               <Box>{children}</Box>
             </Grid>
             <Grid item>
-              <MapBox lat={49.8419} lng={24.0315} />
+              <MapBox />
             </Grid>
           </Grid>
         </Box>

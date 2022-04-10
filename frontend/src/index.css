@@ -18,3 +18,15 @@ code {
   width: 100%;
   height: 100vh;
 }
+
+:root {
+  --msg__height: 100%;
+}
+
+.leaflet-div-icon {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
