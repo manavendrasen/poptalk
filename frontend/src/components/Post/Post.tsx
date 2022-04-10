@@ -70,7 +70,7 @@ export const Post: React.FC<PostProps> = ({ bucketPost }) => {
               width: "2rem",
             }}
           >
-            🎉
+            🥳
           </Box>
           <Typography variant='body1'>{bucketPost.loc_name}</Typography>
         </Box>
@@ -91,7 +91,7 @@ export const Post: React.FC<PostProps> = ({ bucketPost }) => {
           >
             <BsThreeDots />
           </Button> */}
-          <Button onClick={handleClick}>Chat Here</Button>
+          <Button onClick={handleClick}>JOIN BUBBLE</Button>
         </Box>
       </Box>
 
