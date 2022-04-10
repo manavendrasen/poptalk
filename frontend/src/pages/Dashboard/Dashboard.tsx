@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { Grid, Box, Container, Typography } from "@mui/material";
 import { Post } from "../../components/Post/Post";
 import { Post as PostInterface } from "../../constants/modals/Post";
+import { getAllPosts } from "../../api/getPosts";
 
 interface DashboardProps {}
 
@@ -45,12 +46,22 @@ const samplePosts: PostInterface[] = [
 ];
 
 export const Dashboard: React.FC<DashboardProps> = () => {
+  const [posts, setPosts] = useState<PostInterface[]>([]);
+
+  useEffect(() => {
+    (async()=>{
+      const data= await getAllPosts("15");
+      setPosts(data);
+    })()
+  },[])
+
+  console.log(posts);
   return (
     <>
       <Container>
         <h3>Your Recants</h3>
         <Grid container spacing={3}>
-          {samplePosts.map((post) => (
+          {posts.map((post) => (
             <Grid item xs={12} key={post.id}>
               <Post bucketPost={post} />
             </Grid>

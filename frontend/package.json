@@ -12,6 +12,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.26.1",
     "leaflet": "^1.7.1",
     "pubnub": "^4.37.0",
     "pubnub-react": "^2.1.1",
