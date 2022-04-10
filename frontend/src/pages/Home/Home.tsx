@@ -129,9 +129,9 @@ export const Home: React.FC<HomeProps> = ({}) => {
                   className='text-5xl md:text-6xl font-extrabold tracking-tighter mb-8'
                   data-aos='zoom-y-out'
                 >
-                  Discover{" "}
+                  Talk Before{" "}
                   <span className='bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-400'>
-                    Places
+                    Walk
                   </span>
                 </h1>
                 <div className='max-w-3xl mx-auto'>
