@@ -1,8 +1,9 @@
 import axios from "axios";
 
-export const HOST = "http://localhost:5000";
+export const BASE_URL = "http://localhost:5000/api/v1";
 
-export const BASE_URL = `${HOST}/api/v1/user/`;
+export const USER_ENDPOINT = "/user";
+export const POST_ENDPOINT = "/post";
 
 const API = axios.create({ baseURL: BASE_URL });
 

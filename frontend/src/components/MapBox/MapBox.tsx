@@ -13,15 +13,16 @@ import { Marker } from "./Marker";
 import "leaflet/dist/leaflet.css";
 import postState from "../../recoil/atoms/post";
 import { useNavigate } from "react-router-dom";
+import { Post } from "../../constants/modals/Post";
 
 interface ChangeMapViewProps {
   lat: number;
   lng: number;
 }
 
-interface MapBoxProps {}
-
-interface MapBoxProps {}
+interface MapBoxProps {
+  publicPosts: Post[]
+}
 
 interface SetViewOnClickProps {
   animateRef: any;
@@ -49,13 +50,23 @@ const SetViewOnClick: React.FC<SetViewOnClickProps> = ({
   return null;
 };
 
-export const MapBox: React.FC<MapBoxProps> = () => {
+export const MapBox: React.FC<MapBoxProps> = ({ publicPosts }) => {
+  console.log(publicPosts);
   const navigate = useNavigate();
-  const [location] = useRecoilState(locationState);
-  const [post] = useRecoilState(postState);
+  const [location, setLocation] = useRecoilState(locationState);
+  const [post, setPost] = useRecoilState(postState);
   const animateRef = useRef(false);
-  const onClick = () => {
-    navigate(`/app/chat/${post.id}`);
+  const onClick = (publicPost: Post) => {
+    setLocation({
+      lat: publicPost.loc_lat,
+      lng: publicPost.loc_lon
+    });
+
+    setPost({
+      id: publicPost.chat_id
+    });
+
+    navigate(`/app/chat/${publicPost.id}`);
   };
   return (
     <Box
@@ -84,20 +95,28 @@ export const MapBox: React.FC<MapBoxProps> = () => {
 
       <MapContainer center={[location.lat, location.lng]} zoom={14}>
         <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-        <Marker lat={location.lat} lng={location.lng} onClick={onClick} />
+        {publicPosts.map((publicPost) => (
+        <>
+          <Marker
+            lat={publicPost.loc_lat} 
+            lng={publicPost.loc_lon} 
+            onClick={() => onClick(publicPost)} 
+          />
+          <Circle
+            center={[publicPost.loc_lat, publicPost.loc_lon]}
+            radius={1000}
+            fillColor='#FF7761'
+            fillOpacity={0.3}
+            stroke={false}
+            interactive
+          />    
+        </>
+        ))}
         <ChangeMapView lat={location.lat} lng={location.lng} />
         <SetViewOnClick
           animateRef={animateRef}
           lat={location.lat}
           lng={location.lng}
-        />
-        <Circle
-          center={[location.lat, location.lng]}
-          radius={1000}
-          fillColor='#FF7761'
-          fillOpacity={0.3}
-          stroke={false}
-          interactive
         />
       </MapContainer>
     </Box>
