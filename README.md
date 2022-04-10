@@ -82,11 +82,11 @@ What does PopTalk do?
 
 ### Challenges we ran into 
 
-   - Integrating twitter developer's API into our application.
-   - Making the demo video.
-   - Integrating real time markers on maps based on the post's location.
-   - Real time location based chatting.
-   - Desinging the overall architecture and user interface of the application.
+   - Social Media platform APIs are restrictive due to privacy controls. We made a browser extension where the user will choose to bookmark a post. No user activity is tracked thus maintaining user privacy.
+   - Allowing users to signup and login using social media accounts in chrome extension and web app.
+   - Creating temporary chat channels and allowing users to authenticate and chat using Twitter profile.
+   - Packing our solution into a seamless User Interface and Experience. Deployment on different platforms.
+  
   
 
   <br/>
