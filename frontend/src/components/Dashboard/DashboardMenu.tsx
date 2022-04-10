@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, useEffect } from "react";
 import {
   Box,
   IconButton,
@@ -7,7 +7,6 @@ import {
   useMediaQuery,
   Grid,
 } from "@mui/material";
-import { useRecoilState } from "recoil";
 import { IoMenu } from "react-icons/io5";
 import { useLocation } from "react-router-dom";
 import { Navigator } from "./Navigator";
@@ -17,6 +16,8 @@ import { HOME, LOGIN } from "../../constants/routes";
 import styles from "../../assets/jss/components/DrawerLayoutStyles/DashboardLayoutStyles";
 import { Header } from "./Header";
 import { MapBox } from "../MapBox/MapBox";
+import { Post } from "../../constants/modals/Post";
+import { getAllPublicPosts } from "../../api/getPosts";
 
 interface IDashboardMenu {
   children: ReactNode | any | null;
@@ -27,6 +28,8 @@ export const DashboardMenu: React.FC<IDashboardMenu> = ({ children }) => {
   const matches = useMediaQuery(theme.breakpoints.up("md"));
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const [publicPosts, setPublicPosts] = useState<Post[]>([]);
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -36,6 +39,13 @@ export const DashboardMenu: React.FC<IDashboardMenu> = ({ children }) => {
   };
 
   const pathsToExclude: string[] = [HOME, LOGIN];
+
+  useEffect(() => {
+    (async() => {
+      const data = await getAllPublicPosts();
+      setPublicPosts(data);
+    })();
+  }, []);
 
   if (!pathsToExclude.includes(pathname)) {
     return (
@@ -90,7 +100,7 @@ export const DashboardMenu: React.FC<IDashboardMenu> = ({ children }) => {
               <Box>{children}</Box>
             </Grid>
             <Grid item>
-              <MapBox />
+              <MapBox publicPosts={publicPosts} />
             </Grid>
           </Grid>
         </Box>

@@ -11,8 +11,6 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import React, { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { supabase } from "../../supabaseClient";
-import { useRecoilState } from "recoil";
-import authState from "../../recoil/atoms/auth";
 
 interface LoginProps {}
 
@@ -32,7 +30,6 @@ export const Login: React.FC<LoginProps> = () => {
       console.log(error.message);
     } finally {
       setLoading(false);
-      // navigate(APP_HOME);
     }
   };
 
