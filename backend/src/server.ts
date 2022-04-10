@@ -1,6 +1,7 @@
 import path from "path";
 import express from "express";
 import dotenv from "dotenv";
+import {TwitterApi} from "twitter-api-v2";
 
 dotenv.config({ path: path.join(__dirname, "config", "config.env") });
 
@@ -19,10 +20,14 @@ import postRouter from "./routes/postRoute";
 
 import { BASE_ROUTE, USER_ROUTE, POST_ROUTE } from "./constants/routes";
 
+
 const config = setConfig(process.env.NODE_ENV || "DEVELOPMENT");
 
 const HOST = config.HOST || "localhost";
 const PORT = config.PORT || 5000;
+
+//set token
+const BEARER_TOKEN=config.BEARER_TOKEN;
 
 // app
 const app = express();
@@ -78,3 +83,5 @@ process.on("unhandledRejection", (err: Error, promise) => {
   // Close server & exit process
   // server.close(() => process.exit(1));
 });
+
+export const twitterClient = new TwitterApi(BEARER_TOKEN);

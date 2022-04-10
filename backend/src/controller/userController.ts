@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { supabase } from "../config/supabase";
 import asyncHandler from "../middleware/async";
 import ErrorResponse from "../utils/errorResponse";
+import { twitterClient } from "../server";
 
 export const createUser = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -74,7 +75,7 @@ export const createPostInBucket = asyncHandler(
   async (req: Request, res: Response, next: NextFunction) => {
     const { userid, bucketid } = req.params;
     const postData = req.body;
-
+ 
     const bucketResponse = await supabase.from("buckets")
       .select()
       .eq("user_id", userid)
@@ -84,12 +85,55 @@ export const createPostInBucket = asyncHandler(
       return next(new ErrorResponse("Query Error", 500));
     }
 
-    if (bucketResponse.count !== 0) {
-      const { data, error } = await supabase.from("posts").insert({
-        ...postData,
-        user_id: userid,
-        bucket_id: bucketid
-      });
+    // getting data from url logic
+    const {url}=postData;
+    const tweetUrlSplit=url.split('/')
+    const tweetId=tweetUrlSplit[tweetUrlSplit.length-1]
+
+    const dataFromTweet = await twitterClient.v2.singleTweet(tweetId, {
+      expansions: [
+        'geo.place_id'
+      ],"tweet.fields":['geo'],
+      "place.fields":["contained_within","country","country_code","geo","id","name","place_type"]
+    });
+
+    //id
+    //url
+    //lat
+    //long
+    //name
+    const post_id=dataFromTweet.data.id;
+    const post_url=url;
+
+    const {full_name,geo,country} =dataFromTweet!.includes!.places![0];
+
+    const loc_lat=geo?.bbox![0].toString();
+    const loc_lon=geo?.bbox![1].toString();
+    const loc_name= full_name + " "+ country;
+
+
+    if(!dataFromTweet){
+      return next(
+          new ErrorResponse(`No tweet was found with id of ${tweetId}`, 404)
+        );
+    }
+
+    const payload = {
+      post_id,
+      post_url,
+      loc_lat,
+      loc_lon,
+      loc_name,
+      user_id: userid,
+      bucket_id: bucketid
+    };
+
+    console.log(dataFromTweet.includes?.places);
+    console.log(bucketResponse);
+    console.log(payload);
+    
+    if (bucketResponse.data.length !== 0) {
+      const { data, error } = await supabase.from("posts").insert(payload);
 
       if (error !== null) {
         return next(new ErrorResponse("Query Error", 500));
