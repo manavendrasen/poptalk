@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, Box, Typography, Button, CircularProgress } from "@mui/material";
 import { Tweet } from "react-twitter-widgets";
 import { Post as PostInterface } from "../../constants/modals/Post";
@@ -11,6 +12,7 @@ interface PostProps {
 }
 
 export const Post: React.FC<PostProps> = ({ bucketPost }) => {
+  const navigate = useNavigate();
   const [location, setLocation] = useRecoilState(locationState);
   const [post, setPost] = useRecoilState(postState);
 
@@ -31,6 +33,7 @@ export const Post: React.FC<PostProps> = ({ bucketPost }) => {
     setPost({
       id: bucketPost.id,
     });
+    navigate(`/app/chat/${bucketPost.id}`);
   };
   return (
     <Card

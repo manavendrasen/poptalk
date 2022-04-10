@@ -23,14 +23,15 @@ code {
   height: 100vh;
 }
 
-:root {
-  --msg__height: 100%;
-}
-
 .leaflet-div-icon {
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   text-align: center;
+}
+
+:root {
+  --msg__height: 600px;
+  --msg__padding: 10px 16px;
 }

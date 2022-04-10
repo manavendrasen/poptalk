@@ -21,7 +21,7 @@ interface ChangeMapViewProps {
 }
 
 interface MapBoxProps {
-  publicPosts: Post[]
+  publicPosts: Post[];
 }
 
 interface SetViewOnClickProps {
@@ -59,11 +59,11 @@ export const MapBox: React.FC<MapBoxProps> = ({ publicPosts }) => {
   const onClick = (publicPost: Post) => {
     setLocation({
       lat: publicPost.loc_lat,
-      lng: publicPost.loc_lon
+      lng: publicPost.loc_lon,
     });
 
     setPost({
-      id: publicPost.chat_id
+      id: publicPost.chat_id,
     });
 
     navigate(`/app/chat/${publicPost.id}`);
@@ -74,7 +74,7 @@ export const MapBox: React.FC<MapBoxProps> = ({ publicPosts }) => {
         width: "100%",
         overflow: "hidden",
         background: "background.paper",
-        height: "92vh",
+        height: "calc(95vh - 2rem)",
         position: "sticky",
         top: "64px",
         zIndex: "1",
@@ -96,21 +96,21 @@ export const MapBox: React.FC<MapBoxProps> = ({ publicPosts }) => {
       <MapContainer center={[location.lat, location.lng]} zoom={14}>
         <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
         {publicPosts.map((publicPost) => (
-        <>
-          <Marker
-            lat={publicPost.loc_lat} 
-            lng={publicPost.loc_lon} 
-            onClick={() => onClick(publicPost)} 
-          />
-          <Circle
-            center={[publicPost.loc_lat, publicPost.loc_lon]}
-            radius={1000}
-            fillColor='#FF7761'
-            fillOpacity={0.3}
-            stroke={false}
-            interactive
-          />    
-        </>
+          <>
+            <Marker
+              lat={publicPost.loc_lat}
+              lng={publicPost.loc_lon}
+              onClick={() => onClick(publicPost)}
+            />
+            <Circle
+              center={[publicPost.loc_lat, publicPost.loc_lon]}
+              radius={1000}
+              fillColor='#FF7761'
+              fillOpacity={0.3}
+              stroke={false}
+              interactive
+            />
+          </>
         ))}
         <ChangeMapView lat={location.lat} lng={location.lng} />
         <SetViewOnClick
