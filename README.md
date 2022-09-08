@@ -15,7 +15,7 @@
     <br />
     <a href="https://github.com/manavendrasen/poptalk/issues">Report Bug</a>
     ·
-    <a href="https://github.com/manavendrasen/poptalk/issues">Request Feature</a>
+    <a href="https://youtu.be/A6l8yGgv7YY">Video Demo</a>
     ·
     <a href="https://www.canva.com/design/DAE9efgRm10/j0KedxJ8faVXq4KVk2wT-Q/view">Presentation</a>
   </p>
